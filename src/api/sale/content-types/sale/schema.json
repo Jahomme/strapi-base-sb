@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales",
+  "info": {
+    "singularName": "sale",
+    "pluralName": "sales",
+    "displayName": "sale",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "products": {
+      "displayName": "products",
+      "type": "component",
+      "repeatable": true,
+      "component": "array.products",
+      "required": true
+    },
+    "deadlineType": {
+      "type": "string",
+      "required": true
+    },
+    "freightValue": {
+      "type": "float",
+      "required": true
+    },
+    "discount": {
+      "type": "float"
+    },
+    "totalPrice": {
+      "type": "float",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "paymentMethod": {
+      "type": "string",
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sales"
+    }
+  }
+}
